@@ -61,5 +61,5 @@ Route::get('/ages', ['middleware'=>'ageCheck', function(){
 }]);
 
 
-// map to controller
-Route::get('/logings',[LogingController::class,'indexloging']);
+// map to controller with parameter passing
+Route::get('/loging/{name}',[LogingController::class,'indexloging']);
