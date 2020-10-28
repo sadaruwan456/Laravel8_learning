@@ -52,3 +52,9 @@ Route::get('/users/{name?}',function($name=null){
 Route::get('search/{search}', function ($search) {
     return $search;
 })->where('search', '.*');
+
+
+//middleware ex-:
+Route::get('/ages', ['middleware'=>'ageCheck', function(){
+
+}]);
