@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LogingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,9 +25,9 @@ when you type a url /login and you want to go to login view simply u can map tha
 using this routes
 */
 
-Route::get('/loging', function(){
-    return view('loging');
-});
+// Route::get('/loging', function(){
+//     return view('loging');
+// });
 
 /*
 If your route only needs to return a view, you may use the Route::view method(/welcome)
@@ -58,3 +59,7 @@ Route::get('search/{search}', function ($search) {
 Route::get('/ages', ['middleware'=>'ageCheck', function(){
 
 }]);
+
+
+// map to controller
+Route::get('/logings',[LogingController::class,'indexloging']);
